@@ -74,6 +74,6 @@ exports.author_update_post = async function (req, res) {
 
 
     console.log(id)
-    const d = await Author.findByIdAndUpdate(id, { first_name: fname, family_name: faname, date_of_birth: dob, date_of_death: dod })
+    const d = await Author.findByIdAndUpdate(id, { first_name: fname, family_name: faname, date_of_birth: dob, date_of_death: dod }, { new: true })
     res.json(d);
 };

@@ -61,6 +61,6 @@ exports.genre_update_post = async function (req, res) {   //DONE
     console.log(id)
     const data = req.body.name;
     console.log(data)
-    const d = await genre.findByIdAndUpdate(id, { name: data })
+    const d = await genre.findByIdAndUpdate(id, { name: data }, { new: true })
     res.json(d);
 };  

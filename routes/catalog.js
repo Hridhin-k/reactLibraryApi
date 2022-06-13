@@ -16,7 +16,7 @@ router.get('/', book_controller.index);
 router.get('/book/create', book_controller.book_create_get);
 
 // POST request for creating Book.
-router.post('/book/create', book_controller.book_create_post);
+router.post('/book/create/submit', book_controller.book_create_post);
 
 // GET request to delete Book.
 router.get('/book/delete', book_controller.book_delete_get);
@@ -94,7 +94,7 @@ router.get('/genres', genre_controller.genre_list);
 router.get('/bookinstance/create', book_instance_controller.bookinstance_create_get);
 
 // POST request for creating BookInstance.
-router.post('/bookinstance/create', book_instance_controller.bookinstance_create_post);
+router.post('/bookinstance/create/submit', book_instance_controller.bookinstance_create_post);
 
 // GET request to delete BookInstance.
 router.get('/bookinstance/delete', book_instance_controller.bookinstance_delete_get);
@@ -103,10 +103,10 @@ router.get('/bookinstance/delete', book_instance_controller.bookinstance_delete_
 router.post('/bookinstance/delete/submit', book_instance_controller.bookinstance_delete_post);
 
 // GET request to update BookInstance.
-router.get('/bookinstance/:id/update', book_instance_controller.bookinstance_update_get);
+router.get('/bookinstance/update', book_instance_controller.bookinstance_update_get);
 
 // POST request to update BookInstance.
-router.post('/bookinstance/:id/update', book_instance_controller.bookinstance_update_post);
+router.post('/bookinstance/update/submit', book_instance_controller.bookinstance_update_post);
 
 // GET request for one BookInstance.
 router.get('/bookinstance/:id', book_instance_controller.bookinstance_detail);

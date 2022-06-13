@@ -1,0 +1,35 @@
+<html>
+
+<body>
+    <form action="update/submit" method="post">
+        <lable>enter the id of the bookinstance you want to update</lable>
+        <input type="text" name="id" placeholder="id of the bookinstance"><br><br>
+        <label>select name of the book</label>
+        <select name="book"><br><br>
+            {{#each tname}}
+            <option value={{this._id}}>{{this.title}}</option>
+            {{/each}}
+
+        </select><br><br><br>
+
+
+
+        <label>enter imprint of the book</label>
+        <input type="text" name="imprint" placeholder="book imprint"><br><br>
+        <label>enter the status of the book</label>
+
+
+        <select name="status">
+            <option value="available">maintainance</option>
+            <option value="maintainance">available</option>
+            <option value="loaned">loaned</option>
+            <option value="rerserved">reserved</option>
+        </select><br><br>
+        <label>enter the due date</label>
+        <input type="date" name="due_back" placeholder="date"><br><br>
+
+        <input type="submit">
+    </form>
+</body>
+
+</html>
