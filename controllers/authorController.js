@@ -27,7 +27,6 @@ exports.author_create_get = function (req, res) {     //DONE
 
 // Handle Author create on POST.
 exports.author_create_post = async function (req, res) { //DONE
-
     const author = new Author({
         first_name: req.body.first_name,
         family_name: req.body.family_name,
