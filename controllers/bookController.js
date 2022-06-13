@@ -2,7 +2,8 @@ var Book = require('../models/book');
 var genre = require('../models/genre');
 var author = require('../models/author');
 exports.index = function (req, res) {
-    res.send('NOT IMPLEMENTED: Site Home Page');
+    res.render('instruction_home')
+    // res.send('NOT IMPLEMENTED: Site Home Page');
 };
 
 // Display list of all books.
