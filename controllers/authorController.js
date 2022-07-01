@@ -47,9 +47,10 @@ exports.author_delete_get = function (req, res) {          //DONE
 
 // Handle Author delete on POST.
 exports.author_delete_post = async function (req, res) {   //DONE
-    const data = req.body.id;
+    const data = req.body._id;
     console.log(data);
     const d = await Author.findByIdAndRemove(data)
+
 
     res.send(d);
 
@@ -63,7 +64,7 @@ exports.author_update_get = function (req, res) {
 
 // Handle Author update on POST.
 exports.author_update_post = async function (req, res) {
-    const id = req.body.id;
+    const id = req.body._id;
     const fname = req.body.first_name
     const faname = req.body.family_name
 

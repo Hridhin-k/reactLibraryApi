@@ -6,7 +6,8 @@ var book_controller = require('../controllers/bookController');
 var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
-
+var cors = require('cors');
+router.use(cors({ origin: '*' }))
 /// BOOK ROUTES ///
 
 // GET catalog home page.
@@ -22,7 +23,7 @@ router.post('/book/create/submit', book_controller.book_create_post);
 router.get('/book/delete', book_controller.book_delete_get);
 
 // POST request to delete Book.
-router.post('/book/delete/submit    ', book_controller.book_delete_post);
+router.post('/book/delete/submit', book_controller.book_delete_post);
 
 // GET request to update Book.
 router.get('/book/update', book_controller.book_update_get);

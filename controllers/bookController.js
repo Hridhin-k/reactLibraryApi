@@ -56,7 +56,7 @@ exports.book_delete_get = function (req, res) {  //DONE
 
 // Handle book delete on POST.
 exports.book_delete_post = async function (req, res) {    //DONE
-    const data = req.body.id;
+    const data = req.body._id;
     console.log(data);
     const d = await Book.findByIdAndRemove(data)
 
@@ -72,7 +72,7 @@ exports.book_update_get = async function (req, res) {
 
 // Handle book update on POST.
 exports.book_update_post = async function (req, res) {                    //done
-    const id = req.body.id;
+    const id = req.body._id;
     const title = req.body.title
     const author = req.body.author
 
@@ -84,5 +84,6 @@ exports.book_update_post = async function (req, res) {                    //done
 
     console.log(id)
     const d = await Book.findByIdAndUpdate(id, { title: title, author: author, summary: summary, isbn: isbn, genre: genre }, { new: true })
+    console.log(d);
     res.json(d);
 };

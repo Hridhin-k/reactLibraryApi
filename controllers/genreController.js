@@ -42,7 +42,7 @@ exports.genre_delete_get = function (req, res) {    //DONE
 
 // Handle Genre delete on POSt.
 exports.genre_delete_post = async function (req, res) {   //DONE
-    const data = req.body.id;
+    const data = req.body._id;
     const d = await genre.findByIdAndRemove(data)
     res.send(d);
     console.log(d);
@@ -57,7 +57,7 @@ exports.genre_update_get = function (req, res) {    //DONE
 
 // Handle Genre update on POST.
 exports.genre_update_post = async function (req, res) {   //DONE
-    const id = req.body.id;
+    const id = req.body._id;
     console.log(id)
     const data = req.body.name;
     console.log(data)
