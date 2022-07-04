@@ -50,7 +50,7 @@ exports.bookinstance_delete_get = function (req, res) {
 // Handle BookInstance delete on POST.
 exports.bookinstance_delete_post = async function (req, res) {   //DONE
     const data = req.body.data._id;
-    console.log('hi', req.body);
+
     const d = await BookInstance.findByIdAndRemove(data);
 
     //res.send(d);

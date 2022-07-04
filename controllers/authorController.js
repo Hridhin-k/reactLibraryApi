@@ -48,7 +48,7 @@ exports.author_delete_get = function (req, res) {          //DONE
 // Handle Author delete on POST.
 exports.author_delete_post = async function (req, res) {   //DONE
     const data = req.body.data._id;
-    console.log(data);
+
     const d = await Author.findByIdAndRemove(data)
 
 

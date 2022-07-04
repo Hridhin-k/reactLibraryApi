@@ -22,13 +22,13 @@ router.post('/book', book_controller.book_create_post);
 // GET request to delete Book.
 router.get('/book/delete', book_controller.book_delete_get);
 
-// POST request to delete Book.
+// DELETE request to delete Book.
 router.delete('/book', book_controller.book_delete_post);
 
 // GET request to update Book.
 router.get('/book/update', book_controller.book_update_get);
 
-// POST request to update Book.
+// PUT request to update Book.
 router.put('/book', book_controller.book_update_post);
 
 // GET request for one Book.
@@ -49,13 +49,13 @@ router.post('/author', author_controller.author_create_post);
 router.get('/author/delete', author_controller.author_delete_get);
 
 // POST request to delete Author.
-router.post('/author', author_controller.author_delete_post);
+router.delete('/author', author_controller.author_delete_post);
 
 // GET request to update Author.
 router.get('/author/update', author_controller.author_update_get);
 
 // POST request to update Author.
-router.post('/author', author_controller.author_update_post);
+router.put('/author', author_controller.author_update_post);
 
 // GET request for one Author.
 router.get('/author/:id', author_controller.author_detail);
@@ -75,7 +75,7 @@ router.post('/genre', genre_controller.genre_create_post);
 router.get('/genre/delete', genre_controller.genre_delete_get);
 
 // POST request to delete Genre.
-router.post('/genre', genre_controller.genre_delete_post);
+router.delete('/genre', genre_controller.genre_delete_post);
 
 // GET request to update Genre.
 router.get('/genre/update', genre_controller.genre_update_get);
