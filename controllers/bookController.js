@@ -8,10 +8,9 @@ exports.index = function (req, res) {
 
 // Display list of all books.
 exports.book_list = async function (req, res) {     //DONE
-    const data = await Book.find();
-    console.log(data)
+    const book = await Book.find();
 
-    res.send(data);
+    res.send({ status: true, book })
 
 };
 
