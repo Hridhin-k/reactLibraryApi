@@ -6,15 +6,16 @@ exports.user_create = async function (req, res) {   // FUNCTION TO CREATE NEW US
   console.log(req.body)
   try {
     const newPassword = await bcrypt.hash(req.body.password, 10)
-    console.log('bakabakabaka', newPassword)
-    await user.create({
+    console.log('bakabakabaka', newPassword, req.body.password)
+    await userSchema.create({
       name: req.body.name,
       email: req.body.email,
       password: newPassword,
 
     })
-    res.json({ status: 'ok' })
-  } catch (err) {
+    res.json({ status: 200 })
+  }
+  catch (err) {
     res.json({ status: 'error', error: 'Duplicate email' })
   }
 }
@@ -40,10 +41,11 @@ exports.user_login = async function (req, res) {     // FUNCTION TO CHECK LOGIN 
   if (isPasswordValid) {
     const token = jwt.sign(
       {
+
         name: user.name,
         email: user.email,
       },
-      'hridhin#567#'
+      'hridhin#567#', { expiresIn: '24h' }
 
     )
     console.log('backend token', token)
