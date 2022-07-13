@@ -1,12 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // Require controller modules.
-var book_controller = require('../controllers/bookController');
-var author_controller = require('../controllers/authorController');
-var genre_controller = require('../controllers/genreController');
-var book_instance_controller = require('../controllers/bookinstanceController');
-var cors = require('cors');
+const book_controller = require('../controllers/bookController');
+const author_controller = require('../controllers/authorController');
+const genre_controller = require('../controllers/genreController');
+const book_instance_controller = require('../controllers/bookinstanceController');
+const user_controller = require('../controllers/usercontroller')
+const cors = require('cors');
+const { Router } = require('express');
 router.use(cors({ origin: '*' }))
 /// BOOK ROUTES ///
 
@@ -115,4 +117,9 @@ router.get('/bookinstance/:id', book_instance_controller.bookinstance_detail);
 // GET request for list of all BookInstance.
 router.get('/bookinstances', book_instance_controller.bookinstance_list);
 
+
+/// USER AUTHENTICATION ///
+
+router.post('/register', user_controller.user_create)
+router.post('/login', user_controller.user_login)
 module.exports = router;
