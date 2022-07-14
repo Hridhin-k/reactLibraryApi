@@ -27,7 +27,7 @@ router.post('/book', authenticate, book_controller.book_create_post);
 //router.get('/book/delete',authenticate, book_controller.book_delete_get);
 
 // DELETE request to delete Book.
-router.delete('/book', authenticate, book_controller.book_delete_post);
+router.delete('/book/:_id', authenticate, book_controller.book_delete_post);
 
 // GET request to update Book.
 //router.get('/book/update', book_controller.book_update_get);
@@ -53,7 +53,7 @@ router.post('/author', authenticate, author_controller.author_create_post);
 //router.get('/author/delete', author_controller.author_delete_get);
 
 // POST request to delete Author.
-router.delete('/author', authenticate, author_controller.author_delete_post);
+router.delete('/author/:_id', authenticate, author_controller.author_delete_post);
 
 // GET request to update Author.
 //router.get('/author/update', author_controller.author_update_get);
@@ -70,21 +70,21 @@ router.get('/authors', authenticate, author_controller.author_list);
 /// GENRE ROUTES ///
 
 // GET request for creating a Genre. NOTE This must come before route that displays Genre (uses id).
-router.get('/genre/create', authenticate, genre_controller.genre_create_get);
+//router.get('/genre/create', authenticate, genre_controller.genre_create_get);
 
 //POST request for creating Genre.
-//router.post('/genre', authenticate,genre_controller.genre_create_post);
+router.post('/genre', authenticate, genre_controller.genre_create_post);
 
 // GET request to delete Genre.
-router.get('/genre/delete', authenticate, genre_controller.genre_delete_get);
+//router.get('/genre/delete', authenticate, genre_controller.genre_delete_get);
 
-// POST request to delete Genre.
-router.delete('/genre', authenticate, genre_controller.genre_delete_post);
+// DELETE request to delete Genre.
+router.delete('/genre/:_id', authenticate, genre_controller.genre_delete_post);
 
 // GET request to update Genre.
 //router.get('/genre/update', authenticate,genre_controller.genre_update_get);
 
-// POST request to update Genre.
+// PUT request to update Genre.
 router.put('/genre', authenticate, genre_controller.genre_update_post);
 
 // GET request for one Genre.
@@ -105,7 +105,7 @@ router.post('/bookinstance', authenticate, book_instance_controller.bookinstance
 //router.get('/bookinstance', authenticate,book_instance_controller.bookinstance_delete_get);
 
 // POST request to delete BookInstance.
-router.delete('/bookinstance', authenticate, book_instance_controller.bookinstance_delete_post);
+router.delete('/bookinstance/:_id', authenticate, book_instance_controller.bookinstance_delete_post);
 
 // GET request to update BookInstance.
 //router.get('/bookinstance/update', authenticate,book_instance_controller.bookinstance_update_get);

@@ -42,10 +42,11 @@ exports.genre_delete_get = function (req, res) {    //DONE
 
 // Handle Genre delete on POSt.
 exports.genre_delete_post = async function (req, res) {   //DONE
-    const data = req.body.data._id;
+    const data = req.params._id;
+    console.log('deletedid', data)
     const d = await genre.findByIdAndRemove(data)
     res.send(d);
-    console.log(d);
+    console.log('GENREEEE DELETED', d);
     console.log('genre deleted');
     //res.send('NOT IMPLEMENTED: Genre delete POST');   
 };

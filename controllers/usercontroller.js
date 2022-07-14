@@ -45,7 +45,7 @@ exports.user_login = async function (req, res) {     // FUNCTION TO CHECK LOGIN 
         name: user.name,
         email: user.email,
       },
-      'hridhin#567#', { expiresIn: '24h' }
+      'hridhin#567#'
 
     )
     console.log('backend token', token)
